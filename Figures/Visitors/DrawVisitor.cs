@@ -18,17 +18,17 @@ namespace Figures.Visitors
 
         public void Visit(EquilateralTriangle equilateralTriangle)
         {
-            Console.WriteLine($"Equilateral triangle at ({X},{Y}) with side = {equilateralTriangle.SideLength}");
+            Console.WriteLine($"Equilateral triangle with side {equilateralTriangle.SideLength} at ({X},{Y})");
         }
 
         public void Visit(Square square)
         {
-            Console.WriteLine($"Square at ({X},{Y}) with side = {square.SideLength}");
+            Console.WriteLine($"Square with side {square.SideLength} at ({X},{Y})");
         }
 
         public void Visit(Pentagon pentagon)
         {
-            Console.WriteLine($"Pentagon at ({X},{Y}) with side = {pentagon.SideLength}");
+            Console.WriteLine($"Pentagon with side {pentagon.SideLength} at ({X},{Y})");
         }
     }
 }

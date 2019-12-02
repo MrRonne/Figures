@@ -9,8 +9,8 @@ namespace Figures
         static void Main(string[] args)
         {
             var equilateralTriangle = new EquilateralTriangle(1);
-            var square = new Square(1);
-            var pentagon = new Pentagon(1);
+            var square = new Square(2);
+            var pentagon = new Pentagon(3);
 
             RegularPolygon[] regularPolygons =
             {

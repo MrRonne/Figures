@@ -4,12 +4,16 @@ using Figures.TwoDimensional;
 
 namespace Figures.Visitors
 {
-    public class AreaVisitor : IVisitor
+    public class AreaVisitor : IVisitor, ICalculator
     {
-        public readonly Dictionary<RegularPolygon, double> Results = new Dictionary<RegularPolygon, double>();
+        public Dictionary<RegularPolygon, double> Results { get; }
         public double LastResult { get; private set; }
-
         public string OperationName => "Calculating area";
+
+        public AreaVisitor()
+        {
+            Results = new Dictionary<RegularPolygon, double>();
+        }
         
         public void Visit(EquilateralTriangle equilateralTriangle)
         {
@@ -19,29 +23,29 @@ namespace Figures.Visitors
                 Results.Add(equilateralTriangle, lastResult);
             }
             LastResult = lastResult;
-            Console.WriteLine($"Area of equilateral triangle = {lastResult}");
+            Console.WriteLine($"Area of equilateral triangle with side {equilateralTriangle.SideLength} is {lastResult}");
         }
 
         public void Visit(Square square)
         {
             if (!Results.TryGetValue(square, out var lastResult))
             {
-                LastResult = square.SideLength * square.SideLength;
+                lastResult = square.SideLength * square.SideLength;
                 Results.Add(square, lastResult);
             }
             LastResult = lastResult;
-            Console.WriteLine($"Area of square = {LastResult}");
+            Console.WriteLine($"Area of square with side {square.SideLength} is {LastResult}");
         }
 
         public void Visit(Pentagon pentagon)
         {
             if (!Results.TryGetValue(pentagon, out var lastResult))
             {
-                LastResult = (5.0 / 4) * pentagon.SideLength * pentagon.SideLength * (1.0 / Math.Tan(Math.PI / 5));
+                lastResult = (5.0 / 4) * pentagon.SideLength * pentagon.SideLength * (1.0 / Math.Tan(Math.PI / 5));
                 Results.Add(pentagon, lastResult);
             }
             LastResult = lastResult;
-            Console.WriteLine($"Area of pentagon = {LastResult}");
+            Console.WriteLine($"Area of pentagon with side {pentagon.SideLength} is {LastResult}");
         }
     }
 }

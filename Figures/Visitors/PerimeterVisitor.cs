@@ -4,12 +4,16 @@ using Figures.TwoDimensional;
 
 namespace Figures.Visitors
 {
-    public class PerimeterVisitor : IVisitor
+    public class PerimeterVisitor : IVisitor, ICalculator
     {
-        public readonly Dictionary<RegularPolygon, uint> Results = new Dictionary<RegularPolygon, uint>();
-        public uint LastResult { get; private set; }
-
+        public Dictionary<RegularPolygon, double> Results { get; }
+        public double LastResult { get; private set; }
         public string OperationName => "Calculating perimeter";
+
+        public PerimeterVisitor()
+        {
+            Results = new Dictionary<RegularPolygon, double>();
+        }
         
         public void Visit(EquilateralTriangle equilateralTriangle)
         {
@@ -19,7 +23,7 @@ namespace Figures.Visitors
                 Results.Add(equilateralTriangle, lastResult);
             }
             LastResult = lastResult;
-            Console.WriteLine($"Perimeter of equilateral triangle = {lastResult}");
+            Console.WriteLine($"Perimeter of equilateral triangle with side {equilateralTriangle.SideLength} is {lastResult}");
         }
 
         public void Visit(Square square)
@@ -30,7 +34,7 @@ namespace Figures.Visitors
                 Results.Add(square, lastResult);
             }
             LastResult = lastResult;
-            Console.WriteLine($"Perimeter of square = {lastResult}");
+            Console.WriteLine($"Perimeter of square with side {square.SideLength} is {lastResult}");
         }
 
         public void Visit(Pentagon pentagon)
@@ -41,7 +45,7 @@ namespace Figures.Visitors
                 Results.Add(pentagon, lastResult);
             }
             LastResult = lastResult;
-            Console.WriteLine($"Perimeter of pentagon = {lastResult}");
+            Console.WriteLine($"Perimeter of pentagon with side {pentagon.SideLength} is {lastResult}");
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class Pentagon : RegularPolygon
     {
-        public Pentagon(uint sideLength) : base(sideLength) { }
+        public Pentagon(double sideLength) : base(sideLength) { }
 
         public override uint AnglesCount => 5;
 

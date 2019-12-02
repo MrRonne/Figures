@@ -2,7 +2,7 @@
 {
     public class Square : RegularPolygon
     {
-        public Square(uint sideLength) : base(sideLength) { }
+        public Square(double sideLength) : base(sideLength) { }
 
         public override uint AnglesCount => 4;
 

@@ -1,11 +1,15 @@
-﻿namespace Figures.TwoDimensional
+﻿using System;
+
+namespace Figures.TwoDimensional
 {
     public abstract class RegularPolygon
     {
-        public readonly uint SideLength;
+        public readonly double SideLength;
 
-        protected RegularPolygon(uint sideLength)
+        protected RegularPolygon(double sideLength)
         {
+            if (sideLength <= 0)
+                throw new ArgumentException("Side length was not positive");
             SideLength = sideLength;
         }
 
@@ -17,12 +21,12 @@
             return obj != null &&
                    obj is RegularPolygon regularPolygon &&
                    AnglesCount == regularPolygon.AnglesCount &&
-                   SideLength == regularPolygon.SideLength;
+                   Math.Abs(SideLength - regularPolygon.SideLength) < 1e-10;
         }
 
         public override int GetHashCode()
         {
-            return (int)(AnglesCount ^ SideLength);
+            return (int)AnglesCount ^ (int)SideLength*13;
         }
     }
 }

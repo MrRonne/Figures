@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICalculator.cs" />
     <Compile Include="TwoDimensional\RegularPolygon.cs" />
     <Compile Include="IVisitor.cs" />
     <Compile Include="Program.cs" />

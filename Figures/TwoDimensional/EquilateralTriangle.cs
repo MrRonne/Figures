@@ -2,7 +2,7 @@
 {
     public class EquilateralTriangle : RegularPolygon
     {
-        public EquilateralTriangle(uint sideLength) : base(sideLength) { }
+        public EquilateralTriangle(double sideLength) : base(sideLength) { }
 
         public override uint AnglesCount => 3;
 
