@@ -1,10 +1,10 @@
 ﻿namespace Figures.TwoDimensional
 {
-    public class Triangle : RegularPolygon
+    public class Square : RegularPolygon
     {
-        public Triangle(uint sideLength) : base(sideLength) { }
+        public Square(uint sideLength) : base(sideLength) { }
 
-        public override string Name => "Triangle";
+        public override uint AnglesCount => 4;
 
         public override void Accept(IVisitor visitor)
         {

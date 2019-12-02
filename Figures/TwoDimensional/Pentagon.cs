@@ -4,7 +4,7 @@
     {
         public Pentagon(uint sideLength) : base(sideLength) { }
 
-        public override string Name => "Pentagon";
+        public override uint AnglesCount => 5;
 
         public override void Accept(IVisitor visitor)
         {

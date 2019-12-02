@@ -48,8 +48,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TwoDimensional\Pentagon.cs" />
-    <Compile Include="TwoDimensional\Rectangle.cs" />
-    <Compile Include="TwoDimensional\Triangle.cs" />
+    <Compile Include="TwoDimensional\Square.cs" />
+    <Compile Include="TwoDimensional\EquilateralTriangle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
