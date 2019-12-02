@@ -50,12 +50,13 @@
     <Compile Include="TwoDimensional\Pentagon.cs" />
     <Compile Include="TwoDimensional\Square.cs" />
     <Compile Include="TwoDimensional\EquilateralTriangle.cs" />
+    <Compile Include="Visitors\AreaVisitor.cs" />
+    <Compile Include="Visitors\DrawVisitor.cs" />
+    <Compile Include="Visitors\PerimeterVisitor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Visitors\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
